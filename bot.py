@@ -11,8 +11,9 @@ from telegram.ext import (
 
 # Load env
 load_dotenv()
-TOKEN = os.getenv("BOT_TOKEN")
-
+TOKEN = os.getenv("TG_BOT_TOKEN")
+if not TOKEN:
+    raise ValueError("Token missing!")
 # State
 LANGUAGE = range(1)
 
