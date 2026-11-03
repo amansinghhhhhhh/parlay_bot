@@ -11,7 +11,7 @@ from telegram.ext import (
 
 # Load env
 load_dotenv()
-TOKEN = os.getenv("TG_BOT_TOKEN")
+TOKEN = os.getenv("BOT_TOKEN")
 if not TOKEN:
     raise ValueError("Token missing!")
 # State
@@ -39,13 +39,12 @@ async def select_language(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # MAIN MENU WITH MINI APPS
     menu = ReplyKeyboardMarkup([
-        [KeyboardButton("PLAY NOW 🏦🎯💲", web_app=WebAppInfo(
-            url="https://www.taj777.now/"  # <-- Your Main Mini App
+        [KeyboardButton("PARLAY 22 🎯", web_app=WebAppInfo(
+            url="https://www.parlay22.com/"
+        )), KeyboardButton("PARLAY 44 🎯", web_app=WebAppInfo(
+            url="https://www.parlay44.com/"
         ))],
-        [KeyboardButton("AVIATOR ✈️", web_app=WebAppInfo(
-            url="https://www.taj777.now/fantasy/aviator"  # <-- Aviator Mini App URL
-        ))],
-        ["BALANCE 🦬", "Help 🏠"],
+        ["Help 🏠"],
         ["Share Contact 💸", "Visit Channel 📢"]
     ], resize_keyboard=True)
 
@@ -65,22 +64,9 @@ async def select_language(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # Menu Buttons Handler
 async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    text = update.message.text
+    text = update.message.text or ""
 
-    # PLAY NOW is already a WebApp button
-    if "PLAY NOW" in text:
-        await update.message.reply_text("Opening Mini App…")
-        return
-
-    # AVIATOR — ALREADY WEBAPP
-    if "AVIATOR" in text:
-        await update.message.reply_text("Launching Aviator ✈️…")
-        return
-
-    elif "BALANCE" in text:
-        await update.message.reply_text("💰 Your Balance: ₹0.00\n(Feature coming soon)")
-
-    elif "Help" in text:
+    if "Help" in text:
         await update.message.reply_text("🏠 Help Center:\nMessage anytime → @Fastpayzapp")
 
     elif "Share Contact" in text:
