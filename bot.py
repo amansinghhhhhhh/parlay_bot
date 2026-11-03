@@ -67,13 +67,13 @@ async def menu_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text or ""
 
     if "Help" in text:
-        await update.message.reply_text("🏠 Help Center:\nMessage anytime → @Fastpayzapp")
+        await update.message.reply_text("🏠 Help & Support:\n👉 @ankitparlay")
 
     elif "Share Contact" in text:
-        await update.message.reply_text("📲 Please send your contact number.")
+        await update.message.reply_text("📩 Contact Us:\n👉 @ankitparlay")
 
     elif "Visit Channel" in text:
-        await update.message.reply_text("📢 Join our official channel:\n👉 https://t.me/yourchannel")
+        await update.message.reply_text("📢 Join our official channel:\n👉 https://t.me/+lbBysqeI3H83OTc9")
 
     else:
         await update.message.reply_text("❗ Invalid choice. Please choose from menu.")
