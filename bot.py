@@ -40,9 +40,7 @@ async def select_language(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # MAIN MENU WITH MINI APPS
     menu = ReplyKeyboardMarkup([
         [KeyboardButton("PARLAY 22 🎯", web_app=WebAppInfo(
-            url="https://www.parlay22.com/"
-        )), KeyboardButton("PARLAY 44 🎯", web_app=WebAppInfo(
-            url="https://www.parlay44.com/"
+            url="https://www.parlay22.com/join?c=8X0HV0zeQ5"
         ))],
         ["Help 🏠"],
         ["Share Contact 💸", "Visit Channel 📢"]
